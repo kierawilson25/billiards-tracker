@@ -51,9 +51,6 @@ app.get('/players/:id', (req: Request, res: Response) => {
 app.post('/players', (req: Request, res: Response) => {
     const newData = req.body;
     playersList.push(newData);
-
-
-    console.log(`body is ${JSON.stringify(req.body)}`);
     return res.sendStatus(200);
 });
 
@@ -124,7 +121,6 @@ app.post('/games', (req: Request, res: Response) => {
     const newGame: IGame = { id: nextId, ...req.body };
     gamesList.push(newGame);
 
-    console.log(`body is ${JSON.stringify(newGame)}`);
     return res.json(newGame);
 });
 

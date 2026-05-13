@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit {
     this._httpClient.get<IMappedGame[]>("http://localhost:3000/mapped-games", options)
       .subscribe({
         next: (data: IMappedGame[]) => {
-          console.log(data);
           this.mappedGames= data;
         },
         error: (e: any) => {

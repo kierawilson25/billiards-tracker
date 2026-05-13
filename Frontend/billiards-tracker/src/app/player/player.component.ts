@@ -28,9 +28,6 @@ export class PlayerComponent {
       error: (e) => {
         console.error(e);
       },
-      complete: () => {
-        console.log("Done....");
-      }
     });
 
   }
@@ -52,7 +49,6 @@ export class PlayerComponent {
     this._httpClient.get<IPlayerInfo>(`http://localhost:3000/players/${id}/info`, options)
       .subscribe({
         next: (data: IPlayerInfo) => {
-          console.log(data);
           this.playerInfo = data;
         },
         error: (e: any) => {

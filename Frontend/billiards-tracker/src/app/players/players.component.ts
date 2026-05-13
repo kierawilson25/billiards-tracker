@@ -32,7 +32,6 @@ export class PlayersComponent {
     this._httpClient.get<IPlayer[]>("http://localhost:3000/players", options)
       .subscribe({
         next: (data: IPlayer[]) => {
-          console.log(data);
           this.players = data;
         },
         error: (e: any) => {

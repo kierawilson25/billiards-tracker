@@ -33,8 +33,6 @@ export class AddGameComponent {
           return;
         }
 
-        console.log(ngForm);
-
               const options = {
                 headers: new HttpHeaders({
                   'Content-Type': 'application/json',
@@ -50,8 +48,7 @@ export class AddGameComponent {
 
           this._httpClient.post<IGame>("http://localhost:3000/games", data, options)
           .subscribe({
-            next: (data: IGame) => {
-              console.log(data);
+            next: (_data: IGame) => {
               ngForm.reset();
               this.player1 = { id: 0, name: "" };
               this.player2 = { id: 0, name: "" };
@@ -80,7 +77,6 @@ export class AddGameComponent {
         this._httpClient.get<IPlayer[]>("http://localhost:3000/players", options)
           .subscribe({
             next: (data: IPlayer[]) => {
-              console.log(data);
               this.players = data;
             },
             error: (e: any) => {
