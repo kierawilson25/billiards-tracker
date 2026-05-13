@@ -1,0 +1,29 @@
+<div class="main-container">
+  <div class="container-body">
+    <div class="sidenav">
+
+    </div>
+      <div class="content">
+        <router-outlet />
+    </div>
+    <div class="right-side">
+      @if(router.url === '/home'){
+        <button class="right-side-button" (click)="router.navigateByUrl('/add-game')">Add Game</button>
+        <button class="right-side-button" (click)="router.navigateByUrl('/players')">View Players</button>
+      } @else {
+        <button class="right-side-button" (click)="router.navigateByUrl('/home')">Go Home</button>
+      } 
+      
+    </div>
+  </div>
+  
+
+  <footer>
+    <p>Created by Kiera Wilson</p>
+  </footer>
+
+</div>
+
+
+
+

@@ -1,0 +1,12 @@
+<div class="container-box" [class.clickable]="playerId === 0">
+    @if(playerId != 0){
+        <h2 class="player-name">{{ playerInfo.name }}</h2>
+        <hr class="divider"/>
+        <h4 class="stats-label">Stats</h4>
+        <p>Games Played: {{ playerInfo.gamesPlayed }}</p>
+        <p>Wins: {{ playerInfo.wins }}</p>
+        <p>Losses: {{ playerInfo.losses }}</p>
+    } @else {
+        <p>{{player.name}}</p>
+    }
+</div>

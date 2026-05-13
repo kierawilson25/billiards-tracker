@@ -1,0 +1,56 @@
+ <H4> Add Game </H4>
+ <form class="test-form" #f="ngForm" (ngSubmit)="onFormSubmit(f)">
+    <div class="control">
+
+        <label>Player 1: </label>
+        <select [(ngModel)]="player1" name="player1" #player1Field="ngModel" required>
+            @for (player of players; track player.id){
+                <option [ngValue]="player">{{ player.name }}</option>
+            }
+        </select>
+              @if (!player1Field.valid && saveUnsuccessful) {
+        <span>Player 1 ID is required.</span>
+      }
+    </div>
+    <div class="control">
+      <label>Player 2: </label>
+      <select [(ngModel)]="player2" name="player2" #player2Field="ngModel" required>
+          @for (player of players; track player.id){
+              <option [ngValue]="player">{{ player.name }}</option>
+          }
+      </select>
+              @if (!player2Field.valid && saveUnsuccessful) {
+        <span>Player 2 ID is required.</span>
+      }
+    </div>
+
+    <div class="control">
+        <label>Winner: </label>
+      <select [(ngModel)]="winner" name="winner" #winnerField="ngModel" required>
+            <option  [ngValue]="player1">{{ player1.name }}</option>
+            <option  [ngValue]="player2">{{ player2.name }}</option>
+
+      </select>
+      @if (!winnerField.valid && saveUnsuccessful) {
+        <span>Winner ID is required.</span>
+      }
+    </div>
+    <input type="submit" value="Submit Form" onclick="alert('Game Added!')"/>
+  </form>
+
+
+
+
+<!-- <fieldset>
+    <legend>Add Game</legend>
+    <label for="player1">Player 1 ID:</label>
+    <input type="text" id="player1" name="player1"><br>
+
+    <label for="player2">Player 2 ID:</label>
+    <input type="text" id="player2" name="player2"><br>
+
+    <label for="winner">Winner ID:</label>
+    <input type="text" id="winner" name="winner"><br>
+
+    <button type="submit" onClick="alert('Game Added!')" >Add Game</button>
+</fieldset> -->

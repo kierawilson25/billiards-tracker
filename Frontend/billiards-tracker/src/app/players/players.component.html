@@ -1,0 +1,6 @@
+<h1>Billiards Players</h1>
+<app-player
+    *ngFor="let player of players"
+    [player]="player"
+    (click)="router.navigateByUrl('/players/' + player.id)"
+></app-player>

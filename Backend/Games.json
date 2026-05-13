@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "player1Id": 1,
+        "player2Id": 2,
+        "winnerId": 1
+    },
+    {
+        "id": 2,
+        "player1Id": 2,
+        "player2Id": 4,
+        "winnerId": 4
+    },
+    {
+        "id": 3,
+        "player1Id": 3,
+        "player2Id": 1,
+        "winnerId": 1
+    },
+    {
+        "id": 4,
+        "player1Id": 4,
+        "player2Id": 3,
+        "winnerId": 3
+    }
+]
